@@ -24,3 +24,5 @@ const getEmployees = (list) => {
 const ul = document.querySelector('ul');
 
 sortList(ul);
+
+getEmployees(ul);
