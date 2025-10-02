@@ -14,9 +14,9 @@ const sortList = (list) => {
 
 const getEmployees = (list) => {
   return [...list.querySelectorAll('li')].map((el) => ({
-    name: el.textContent,
+    name: el.textContent.trim(),
     position: el.dataset.position,
-    salary: el.dataset.salary,
+    salary: toNumber(el.dataset.salary),
     age: Number(el.dataset.age),
   }));
 };
@@ -25,4 +25,7 @@ const ul = document.querySelector('ul');
 
 sortList(ul);
 
-getEmployees(ul);
+const employees = getEmployees(ul);
+
+// eslint-disable-next-line no-console
+console.log(employees);
